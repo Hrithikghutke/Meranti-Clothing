@@ -1,0 +1,11 @@
+@import "./config";
+
+.bulletin-header {
+  background-color: $black;
+  text-align: center;
+  p {
+    padding: 5px;
+    font-size: var(--fs-paragraph);
+    color: $white;
+  }
+}
