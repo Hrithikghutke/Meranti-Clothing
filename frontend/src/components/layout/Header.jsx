@@ -10,7 +10,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 //----------- Logo Import ----------------
-import Logo from "../../assets/SVG/Logo.svg";
+import Logo from "../../assets/Logo/Logo.svg";
 //----------- Icons Import ----------------
 
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
