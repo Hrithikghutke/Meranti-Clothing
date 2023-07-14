@@ -4,11 +4,11 @@ import { Carousel } from "flowbite-react";
 function CarouseL() {
   return (
     <Carousel
-      className="absolute top-0 z-[-10] h-[80vh] sm:h-[60vh] child:rounded-none"
-      slideInterval={3000}
+      className=" mt-[-142px] h-[90vh] sm:h-[60vh] child:rounded-none"
+      slideInterval={5000}
     >
       <img
-        src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2560&q=80"
+        src="https://images.unsplash.com/photo-1682687220640-9d3b11ca30e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
         alt="image 1"
         className="carouselimg"
       />

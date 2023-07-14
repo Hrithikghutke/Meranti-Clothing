@@ -15,7 +15,7 @@ const Header = () => {
   const [open, setopen] = useState(false);
 
   return (
-    <header className="flex bg-transparent  px-10 py-8 sm:p-6 sm:flex-col items-center  sm:items-start justify-between sm:justify-center">
+    <header className="flex relative bg-transparent z-10  px-10 py-8 sm:p-6 sm:flex-col items-center  sm:items-start justify-between sm:justify-center">
       <img className="w-[15vh] sm:w-20" src={logo} alt="img" />
 
       <div
@@ -32,7 +32,7 @@ const Header = () => {
       <ul className="flex sm:hidden">
         {links.map((e) => {
           return (
-            <li key={""} className="px-5 font-semibold">
+            <li key={e.name} className="px-5 font-semibold">
               <Link to={e.to}>{e.name}</Link>
             </li>
           );
@@ -68,7 +68,7 @@ const Header = () => {
           </h3>
           {links.map((e) => (
             <li
-              key={""}
+              key={e.name}
               className="px-3 
             sm:mt-2 
             sm:pl-7

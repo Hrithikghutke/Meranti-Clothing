@@ -1,45 +1,44 @@
-import React from "react";
-import { Header, CarouseL, Product } from "../Components";
+import React, { Fragment, useEffect } from "react";
 
-const product = {
-  name: "plain white t-shirt",
-  image: [
-    {
-      url: "https://images.unsplash.com/photo-1571945153237-4929e783af4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80",
-    },
-  ],
-  price: "$4000",
-  _id: "/home",
-};
+import { Header, CarouseL, Product, Loader } from "../Components";
+import { MetaData } from "../Constants";
+import { getProduct } from "../Actions/ProductAction";
+import { useSelector, useDispatch } from "react-redux";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { loading, errors, products, productsCount } = useSelector(
+    (state) => state.products
+  );
+
+  useEffect(() => {
+    dispatch(getProduct());
+  }, [dispatch]);
+
   return (
-    <div>
-      <div className="z-50">
-        <Header />
-      </div>
+    <Fragment>
+      {loading ? (
+        <Loader />
+      ) : (
+        <Fragment>
+          <MetaData title="MerantiClothing" />
 
-      <div className="min-h-[70vh] sm:min-h-[49vh]">
-        <CarouseL />
-      </div>
+          <Header />
 
-      <h3 className="w-full sm:mt-16 text-center text-black uppercase tracking-widest drop-shadow-md">
-        New Arrivals
-      </h3>
-      <div className="grid grid-cols-4 sm:grid-cols-2 ">
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-        <Product product={product} />
-      </div>
-    </div>
+          <CarouseL />
+
+          <h3 className="w-full mt-16 sm:mt-16 text-center text-black uppercase tracking-widest drop-shadow-md">
+            New Arrivals
+          </h3>
+          <div className="grid grid-cols-4 sm:grid-cols-2 ">
+            {products &&
+              products.map((product) => (
+                <Product key={product._id} product={product} />
+              ))}
+          </div>
+        </Fragment>
+      )}
+    </Fragment>
   );
 };
 
