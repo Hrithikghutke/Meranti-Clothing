@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,6 +11,19 @@
     @apply text-base  ml-2 mr-2;
   }
 
+  .menu {
+    @apply absolute right-10 z-10 top-6  cursor-pointer;
+  }
+
+  .links {
+    @apply px-3 uppercase font-robotoCondensed font-semibold;
+  }
+  .button {
+    @apply font-roboto flex justify-center items-center px-4 py-2 mx-4 rounded-md text-semiblack text-sm font-semibold bg-slate-100;
+  }
+  .accentButton {
+    @apply font-roboto flex justify-center items-center px-4 py-2 rounded-md text-white text-sm font-semibold bg-secondary;
+  }
   .carouselimg {
     @apply h-full w-full object-cover brightness-50;
   }
@@ -31,6 +45,7 @@ body {
 
   --color-primary: #6059f7;
   --color-secondary: #936dab;
+  --color-offwhite: #dedede;
   --color-accent: #936dab;
   --color-white: #ffffff;
   --color-black: #000000;
@@ -44,6 +59,8 @@ body {
   /* Fonts */
   --roboto: "Roboto", sans-serif;
   --poppins: "Poppins", sans-serif;
+  --firasans: "Fira Sans", sans-serif;
+  --robotoCondensed: "Roboto Condensed", sans-serif;
 
   --fs-mainheading: clamp(1rem, 2vw + 1rem, 2.3rem);
   --fs-heading: clamp(0.75rem, 2vw + 1rem, 2rem);

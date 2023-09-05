@@ -17,6 +17,9 @@ export default {
 
       fontFamily: {
         roboto: "var(--roboto)",
+        firasans: "var(--firasans)",
+        robotoCondensed: "var(--robotoCondensed)",
+        poppins: "var(--poppins)",
       },
 
       screens: {
@@ -32,6 +35,7 @@ export default {
         secondary: "var(--color-secondary)",
         accent: "var(--color-accent)",
         white: "var(--color-white)",
+        offwhite: "var(--color-offwhite)",
         black: "var(--color-black)",
         headingColor: "var(--color-heading)",
         paragraphColor: "var(--color-paragraph)",
@@ -50,7 +54,7 @@ export default {
     function ({ addVariant }) {
       addVariant("child", "& > *");
       addVariant("child-hover", "& > *:hover");
+      require("flowbite/plugin");
     },
-    require("flowbite/plugin"),
   ],
 };
