@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home } from "./Pages";
+import { Home, ProductDetails } from "./Pages";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Scrollprogressbar } from "./Components";
@@ -10,6 +10,7 @@ function App() {
       <Scrollprogressbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
       <ToastContainer />
     </BrowserRouter>

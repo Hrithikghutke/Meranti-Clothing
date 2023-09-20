@@ -19,7 +19,7 @@ const Product = ({ product }) => {
     <div className="px-3">
       <Link
         className="block h-[70vh] sm:h-[30vh] hover:brightness-50 duration-300"
-        to={product._id}
+        to={`product/${product._id}`}
       >
         <img className="w-full h-full " src={product.images[0].url} alt="img" />
       </Link>
