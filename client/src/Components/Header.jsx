@@ -15,8 +15,8 @@ function Header() {
   ];
 
   return (
-    <header>
-      <div className="grid relative grid-cols-3 sm:grid-cols-1 px-[8vw] py-1">
+    <header className="shadow-md ">
+      <div className="grid relative grid-cols-3 sm:grid-cols-1 px-[8vw] py-1 ">
         <div className="col-span-1 flex items-center justify-start ">
           <img className="w-[120px] sm:w-[80px]" src={logo} alt="img" />
         </div>
@@ -37,8 +37,12 @@ function Header() {
             </ul>
           </div>
           <div className="flex sm:pb-4 justify-center items-center ">
-            <Link className="button">Login</Link>
-            <Link className="accentButton">Signup</Link>
+            <Link className="button  hover:drop-shadow-xl hover:text-black transition-all duration-300">
+              Login
+            </Link>
+            <Link className="accentButton hover:drop-shadow-xl hover:text-white transition-all duration-300">
+              Signup
+            </Link>
           </div>
         </div>
         <div onClick={() => setopen(!open)} className="hidden sm:block">
